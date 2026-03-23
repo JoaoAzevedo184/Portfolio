@@ -1,16 +1,14 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { theme } from "../config/theme";
+import { navLinks, identity } from "../config/data";
 
-const links = ["Início", "Sobre", "Stack", "Projetos", "Contato"];
-const ids = ["hero", "sobre", "stack", "projetos", "contato"];
+function scrollTo(id: string) {
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+}
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
-
-  const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    setOpen(false);
-  };
 
   return (
     <nav
@@ -18,14 +16,14 @@ export function Navbar() {
       style={{
         background: "rgba(10,10,10,0.85)",
         backdropFilter: "blur(12px)",
-        borderBottom: "1px solid #00ff9c22",
+        borderBottom: theme.borders.sectionLine,
       }}
     >
       <span
         style={{
-          fontFamily: "'JetBrains Mono', monospace",
-          color: "#00ff9c",
-          textShadow: "0 0 12px #00ff9c",
+          fontFamily: theme.fonts.mono,
+          color: theme.colors.accent.primary,
+          textShadow: theme.colors.glow.text,
           letterSpacing: "0.15em",
           fontSize: "1.1rem",
         }}
@@ -35,30 +33,22 @@ export function Navbar() {
 
       {/* Desktop */}
       <div className="hidden md:flex gap-8">
-        {links.map((link, i) => (
+        {navLinks.map((link) => (
           <button
-            key={link}
-            onClick={() => scrollTo(ids[i])}
-            className="transition-all duration-200 hover:scale-105"
+            key={link.label}
+            onClick={() => scrollTo(link.sectionId)}
+            className="nav-link transition-all duration-200 hover:scale-105"
             style={{
-              fontFamily: "'JetBrains Mono', monospace",
-              color: "#aaa",
+              fontFamily: theme.fonts.mono,
+              color: theme.colors.text.secondary,
               fontSize: "0.85rem",
               letterSpacing: "0.05em",
               background: "none",
               border: "none",
               cursor: "pointer",
             }}
-            onMouseEnter={(e) => {
-              (e.target as HTMLElement).style.color = "#00ff9c";
-              (e.target as HTMLElement).style.textShadow = "0 0 8px #00ff9c";
-            }}
-            onMouseLeave={(e) => {
-              (e.target as HTMLElement).style.color = "#aaa";
-              (e.target as HTMLElement).style.textShadow = "none";
-            }}
           >
-            {link}
+            {link.label}
           </button>
         ))}
       </div>
@@ -66,7 +56,7 @@ export function Navbar() {
       {/* Mobile toggle */}
       <button
         className="md:hidden"
-        style={{ color: "#00ff9c" }}
+        style={{ color: theme.colors.accent.primary, background: "none", border: "none" }}
         onClick={() => setOpen(!open)}
       >
         {open ? <X size={22} /> : <Menu size={22} />}
@@ -78,16 +68,19 @@ export function Navbar() {
           className="absolute top-full left-0 right-0 flex flex-col gap-4 px-6 py-6"
           style={{
             background: "rgba(10,10,10,0.97)",
-            borderBottom: "1px solid #00ff9c22",
+            borderBottom: theme.borders.sectionLine,
           }}
         >
-          {links.map((link, i) => (
+          {navLinks.map((link) => (
             <button
-              key={link}
-              onClick={() => scrollTo(ids[i])}
+              key={link.label}
+              onClick={() => {
+                scrollTo(link.sectionId);
+                setOpen(false);
+              }}
               style={{
-                fontFamily: "'JetBrains Mono', monospace",
-                color: "#00ff9c",
+                fontFamily: theme.fonts.mono,
+                color: theme.colors.accent.primary,
                 fontSize: "0.9rem",
                 background: "none",
                 border: "none",
@@ -95,11 +88,18 @@ export function Navbar() {
                 textAlign: "left",
               }}
             >
-              &gt; {link}
+              &gt; {link.label}
             </button>
           ))}
         </div>
       )}
+
+      <style>{`
+        .nav-link:hover {
+          color: ${theme.colors.accent.primary} !important;
+          text-shadow: ${theme.colors.glow.textSoft};
+        }
+      `}</style>
     </nav>
   );
 }
