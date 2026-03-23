@@ -1,8 +1,9 @@
 import { useState, useCallback } from "react";
+import { theme } from "./config/theme";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
-import { About } from "./components/About";
+import { About } from "./sections/About/About";
 import { Stack } from "./components/Stack";
 import { Projects } from "./components/Projects";
 import { Contact } from "./components/Contact";
@@ -16,7 +17,7 @@ export default function App() {
   }, []);
 
   return (
-    <div style={{ backgroundColor: "#0a0a0a", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: theme.colors.bg.primary, minHeight: "100vh" }}>
       <LoadingScreen onComplete={handleComplete} />
       <div
         className="transition-opacity duration-700"
