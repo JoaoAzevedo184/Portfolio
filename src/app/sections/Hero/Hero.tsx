@@ -1,18 +1,20 @@
 import { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { theme } from "../../config/theme";
+import { identity, heroRoles } from "../../config/data";
 
-const roles = ["Backend Developer", "Software Engineer", "API Architect", "Java & Spring Boot Dev"];
+function scrollTo(id: string) {
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+}
 
 export function Hero() {
   const [roleIdx, setRoleIdx] = useState(0);
   const [displayed, setDisplayed] = useState("");
-  const [typing, setTyping] = useState(true);
 
   useEffect(() => {
-    const role = roles[roleIdx];
+    const role = heroRoles[roleIdx];
     let i = 0;
     setDisplayed("");
-    setTyping(true);
 
     const typeInterval = setInterval(() => {
       if (i < role.length) {
@@ -28,7 +30,7 @@ export function Hero() {
               j--;
             } else {
               clearInterval(deleteInterval);
-              setRoleIdx((prev) => (prev + 1) % roles.length);
+              setRoleIdx((prev) => (prev + 1) % heroRoles.length);
             }
           }, 50);
         }, 1800);
@@ -37,15 +39,13 @@ export function Hero() {
     return () => clearInterval(typeInterval);
   }, [roleIdx]);
 
-  const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
+  const [firstName, lastName] = identity.displayName.split(".");
 
   return (
     <section
       id="hero"
       className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden"
-      style={{ backgroundColor: "#0a0a0a" }}
+      style={{ backgroundColor: theme.colors.bg.primary }}
     >
       {/* Grid background */}
       <div
@@ -73,11 +73,11 @@ export function Hero() {
         <div
           className="mb-4"
           style={{
-            fontFamily: "'JetBrains Mono', monospace",
-            color: "#00ff9c",
+            fontFamily: theme.fonts.mono,
+            color: theme.colors.accent.primary,
             fontSize: "0.85rem",
             letterSpacing: "0.3em",
-            textShadow: "0 0 8px #00ff9c",
+            textShadow: theme.colors.glow.textSoft,
           }}
         >
           &gt; HELLO, WORLD_
@@ -86,8 +86,8 @@ export function Hero() {
         <h1
           className="mb-4"
           style={{
-            fontFamily: "'JetBrains Mono', monospace",
-            color: "#ffffff",
+            fontFamily: theme.fonts.mono,
+            color: theme.colors.text.primary,
             fontSize: "clamp(2.5rem, 7vw, 5rem)",
             fontWeight: 700,
             lineHeight: 1.1,
@@ -95,21 +95,25 @@ export function Hero() {
             textShadow: "0 0 40px rgba(0,255,156,0.15)",
           }}
         >
-          Alex<span style={{ color: "#00ff9c", textShadow: "0 0 20px #00ff9c" }}>.</span>Silva
+          {firstName}
+          <span style={{ color: theme.colors.accent.primary, textShadow: `0 0 20px ${theme.colors.accent.primary}` }}>
+            .
+          </span>
+          {lastName}
         </h1>
 
         <div
           className="mb-6 h-10 flex items-center justify-center"
           style={{
-            fontFamily: "'JetBrains Mono', monospace",
-            color: "#00ff9c",
+            fontFamily: theme.fonts.mono,
+            color: theme.colors.accent.primary,
             fontSize: "clamp(1rem, 3vw, 1.4rem)",
-            textShadow: "0 0 12px #00ff9c",
+            textShadow: theme.colors.glow.text,
             letterSpacing: "0.05em",
           }}
         >
           {displayed}
-          <span className="animate-pulse ml-1" style={{ color: "#00ff9c" }}>
+          <span className="animate-pulse ml-1" style={{ color: theme.colors.accent.primary }}>
             |
           </span>
         </div>
@@ -117,14 +121,16 @@ export function Hero() {
         <p
           className="mb-10 max-w-xl mx-auto"
           style={{
-            fontFamily: "'JetBrains Mono', monospace",
+            fontFamily: theme.fonts.mono,
             color: "#888",
             fontSize: "0.95rem",
             lineHeight: 1.7,
           }}
         >
-          Construindo sistemas robustos, escaláveis e de alto desempenho.{" "}
-          <span style={{ color: "#00ff9c99" }}>Do back-end à nuvem.</span>
+          {identity.tagline}{" "}
+          <span style={{ color: `${theme.colors.accent.primary}99` }}>
+            {identity.taglineHighlight}
+          </span>
         </p>
 
         <div className="flex flex-wrap gap-4 justify-center">
@@ -132,14 +138,14 @@ export function Hero() {
             onClick={() => scrollTo("projetos")}
             className="px-7 py-3 rounded transition-all duration-200 hover:scale-105"
             style={{
-              fontFamily: "'JetBrains Mono', monospace",
+              fontFamily: theme.fonts.mono,
               fontSize: "0.85rem",
               letterSpacing: "0.1em",
-              background: "#00ff9c",
-              color: "#0a0a0a",
+              background: theme.colors.accent.primary,
+              color: theme.colors.bg.primary,
               border: "none",
               cursor: "pointer",
-              boxShadow: "0 0 20px #00ff9c66, 0 0 40px #00ff9c33",
+              boxShadow: theme.colors.glow.medium,
               fontWeight: 700,
             }}
           >
@@ -147,24 +153,16 @@ export function Hero() {
           </button>
           <button
             onClick={() => scrollTo("contato")}
-            className="px-7 py-3 rounded transition-all duration-200 hover:scale-105"
+            className="hero-btn-outline px-7 py-3 rounded transition-all duration-200 hover:scale-105"
             style={{
-              fontFamily: "'JetBrains Mono', monospace",
+              fontFamily: theme.fonts.mono,
               fontSize: "0.85rem",
               letterSpacing: "0.1em",
               background: "transparent",
-              color: "#00ff9c",
-              border: "1px solid #00ff9c66",
+              color: theme.colors.accent.primary,
+              border: `1px solid ${theme.colors.accent.primary}66`,
               cursor: "pointer",
-              boxShadow: "0 0 10px #00ff9c22",
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.boxShadow = "0 0 20px #00ff9c44, inset 0 0 20px #00ff9c11";
-              (e.currentTarget as HTMLElement).style.borderColor = "#00ff9c";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.boxShadow = "0 0 10px #00ff9c22";
-              (e.currentTarget as HTMLElement).style.borderColor = "#00ff9c66";
+              boxShadow: theme.colors.glow.soft,
             }}
           >
             &gt; Contato
@@ -175,7 +173,7 @@ export function Hero() {
       <button
         onClick={() => scrollTo("sobre")}
         className="absolute bottom-8 animate-bounce"
-        style={{ color: "#00ff9c55", background: "none", border: "none", cursor: "pointer" }}
+        style={{ color: `${theme.colors.accent.primary}55`, background: "none", border: "none", cursor: "pointer" }}
       >
         <ChevronDown size={28} />
       </button>

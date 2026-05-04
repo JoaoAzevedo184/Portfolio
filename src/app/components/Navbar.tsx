@@ -19,6 +19,7 @@ export function Navbar() {
         borderBottom: theme.borders.sectionLine,
       }}
     >
+      
       <span
         style={{
           fontFamily: theme.fonts.mono,
@@ -30,27 +31,33 @@ export function Navbar() {
       >
         &lt;DEV/&gt;
       </span>
+      
 
       {/* Desktop */}
       <div className="hidden md:flex gap-8">
-        {navLinks.map((link) => (
-          <button
-            key={link.label}
-            onClick={() => scrollTo(link.sectionId)}
-            className="nav-link transition-all duration-200 hover:scale-105"
-            style={{
-              fontFamily: theme.fonts.mono,
-              color: theme.colors.text.secondary,
-              fontSize: "0.85rem",
-              letterSpacing: "0.05em",
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-            }}
-          >
-            {link.label}
-          </button>
-        ))}
+       {navLinks.map((link) => {
+          const Icon = link.icon;
+
+          return (
+            <button
+              key={link.label}
+              onClick={() => scrollTo(link.sectionId)}
+              className="nav-link transition-all duration-200 hover:scale-105 flex items-center gap-2"
+              style={{
+                fontFamily: theme.fonts.mono,
+                color: theme.colors.text.secondary,
+                fontSize: "0.85rem",
+                letterSpacing: "0.05em",
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+              }}
+            >
+              {Icon && <Icon size={16} />}
+              {link.label}
+            </button>
+          );
+        })}
       </div>
 
       {/* Mobile toggle */}
@@ -71,26 +78,29 @@ export function Navbar() {
             borderBottom: theme.borders.sectionLine,
           }}
         >
-          {navLinks.map((link) => (
-            <button
-              key={link.label}
-              onClick={() => {
-                scrollTo(link.sectionId);
-                setOpen(false);
-              }}
-              style={{
-                fontFamily: theme.fonts.mono,
-                color: theme.colors.accent.primary,
-                fontSize: "0.9rem",
-                background: "none",
-                border: "none",
-                cursor: "pointer",
-                textAlign: "left",
-              }}
-            >
-              &gt; {link.label}
-            </button>
-          ))}
+          {navLinks.map((link) => {
+            const Icon = link.icon;
+
+            return (
+              <button
+                key={link.label}
+                onClick={() => scrollTo(link.sectionId)}
+                className="nav-link transition-all duration-200 hover:scale-105 flex items-center gap-2"
+                style={{
+                  fontFamily: theme.fonts.mono,
+                  color: theme.colors.text.secondary,
+                  fontSize: "0.85rem",
+                  letterSpacing: "0.05em",
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                }}
+              >
+                {Icon && <Icon size={16} />}
+                {link.label}
+              </button>
+            );
+          })}
         </div>
       )}
 

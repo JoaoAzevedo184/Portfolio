@@ -2,12 +2,8 @@ import { useState, useCallback } from "react";
 import { theme } from "./config/theme";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { Navbar } from "./components/Navbar";
-import { Hero } from "./components/Hero";
-import { About } from "./components/About";
-import { Stack } from "./components/Stack";
-import { Projects } from "./components/Projects";
-import { Contact } from "./components/Contact";
 import { ChatBot } from "./components/ChatBot";
+import { Hero, About, Stack, Projects, Contact } from "./sections";
 
 export default function App() {
   const [loaded, setLoaded] = useState(false);

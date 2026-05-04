@@ -1,3 +1,4 @@
+import { Home, User, Layers, Briefcase, Mail } from "lucide-react";
 /**
  * Portfolio data — all personal content lives here.
  * Edit this single file to customize the entire portfolio for a different person.
@@ -8,6 +9,7 @@
 export const identity = {
   name: "João Victor",
   surname: "Azevedo",
+  completeName: "João Victor Azevedo de Sena",
   /** Shown in hero as Name.Surname */
   displayName: "João.Azevedo",
   /** Shown under photo */
@@ -33,7 +35,7 @@ export const heroRoles = [
 
 export const aboutBio = {
   codeBlock: {
-    nome: identity.displayName,
+    nome: identity.completeName,
     foco: identity.focus,
     experiência: identity.experience,
     disponível: identity.available,
@@ -92,10 +94,10 @@ export const stackCategories: StackCategory[] = [
     label: "Backend",
     color: "#00ff9c",
     techs: [
-      { name: "TypeScript", icon: "🔷", desc: "Linguagem principal para APIs e projetos backend." },
-      { name: "Python", icon: "🐍", desc: "Automação, scripts, FastAPI e integrações." },
-      { name: "Node.js", icon: "🟢", desc: "Runtime para APIs REST e microsserviços." },
-      { name: "APIs REST", icon: "🔗", desc: "Design e implementação de contratos de API." },
+      { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/339933", desc: "Runtime para APIs REST e microsserviços escaláveis." },
+      { name: "Java", icon: "https://cdn.simpleicons.org/openjdk/FF0000", desc: "Desenvolvimento de aplicações empresariais seguras e resilientes." },
+      { name: "Spring Boot", icon: "https://cdn.simpleicons.org/springboot/6DB33F", desc: "Ecossistema Java para criação rápida de microsserviços prontos para produção." },
+      { name: "Python", icon: "https://cdn.simpleicons.org/python/3776AB", desc: "Automação, scripts, FastAPI e integrações." },
     ],
   },
   {
@@ -103,9 +105,9 @@ export const stackCategories: StackCategory[] = [
     label: "Frontend",
     color: "#00d4ff",
     techs: [
-      { name: "React", icon: "⚛️", desc: "Interfaces modernas com componentes reutilizáveis." },
-      { name: "React Native", icon: "📱", desc: "Apps mobile cross-platform com Expo." },
-      { name: "Next.js", icon: "▲", desc: "SSR, SSG e apps full-stack com React." },
+      { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB", desc: "Interfaces modernas com componentes reutilizáveis." },
+      { name: "React Native", icon: "https://cdn.simpleicons.org/react/61DAFB", desc: "Desenvolvimento de apps mobile nativos para iOS e Android." },
+      { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/ffffff", desc: "SSR, SSG e apps full-stack com React." },
     ],
   },
   {
@@ -113,11 +115,11 @@ export const stackCategories: StackCategory[] = [
     label: "Infraestrutura",
     color: "#bf9bff",
     techs: [
-      { name: "Docker", icon: "🐳", desc: "Containerização e ambientes reprodutíveis." },
-      { name: "Kubernetes", icon: "☸️", desc: "Orquestração com Helm Charts e Kind." },
-      { name: "PostgreSQL", icon: "🐘", desc: "Banco relacional de alta confiabilidade." },
-      { name: "Linux", icon: "🐧", desc: "Administração de servidores e automação via shell." },
-      { name: "GitHub Actions", icon: "⚡", desc: "CI/CD pipelines e automação de deploy." },
+      { name: "Docker", icon: "https://cdn.simpleicons.org/docker/2496ED", desc: "Containerização e ambientes reprodutíveis." },
+      { name: "Kubernetes", icon: "https://cdn.simpleicons.org/kubernetes/326CE5", desc: "Orquestração de containers em larga escala." },
+      { name: "Linux", icon: "https://cdn.simpleicons.org/linux/FCC624", desc: "Uso de Pop!_OS para desenvolvimento e administração de servidores." },
+      { name: "PostgreSQL", icon: "https://cdn.simpleicons.org/postgresql/4169E1", desc: "Banco relacional de alta confiabilidade." },
+      { name: "GitHub Actions", icon: "https://cdn.simpleicons.org/githubactions/2088FF", desc: "CI/CD pipelines e automação de deploy." },
     ],
   },
 ];
@@ -257,11 +259,11 @@ export const chatBotFaq = [
 // ─── Navigation ──────────────────────────────────────────────────────────────
 
 export const navLinks = [
-  { label: "Início", sectionId: "hero" },
-  { label: "Sobre", sectionId: "sobre" },
-  { label: "Stack", sectionId: "stack" },
-  { label: "Projetos", sectionId: "projetos" },
-  { label: "Contato", sectionId: "contato" },
+  { label: "Início", sectionId: "hero", icon: Home },
+  { label: "Sobre", sectionId: "sobre", icon: User },
+  { label: "Stack", sectionId: "stack", icon: Layers },
+  { label: "Projetos", sectionId: "projetos", icon: Briefcase },
+  { label: "Contato", sectionId: "contato", icon: Mail },
 ];
 
 // ─── Loading Screen ──────────────────────────────────────────────────────────
