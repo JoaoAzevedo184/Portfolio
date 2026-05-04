@@ -18,7 +18,8 @@ export const identity = {
   tagline: "Construindo sistemas robustos, escaláveis e de alto desempenho.",
   taglineHighlight: "Do back-end à nuvem.",
   available: true,
-  experience: "Estudante ADS",
+  searching: "Buscando estágio em desenvolvimento backend, DevOps ou infraestrutura.",
+  formation: "Sistemas de Informação - UNINASSAU Olinda",
   focus: "Backend & DevOps Engineering",
 };
 
@@ -37,12 +38,13 @@ export const aboutBio = {
   codeBlock: {
     nome: identity.completeName,
     foco: identity.focus,
-    experiência: identity.experience,
+    formação: identity.formation,
+    searching: identity.searching,
     disponível: identity.available,
   },
   paragraphs: [
     <>
-      Estudante de Análise e Desenvolvimento de Sistemas com foco em{" "}
+      Estudante de Sistemas de Informação com foco em{" "}
       <span style={{ color: "#00ff9c" }}>Backend e DevOps</span>, construindo
       APIs RESTful, pipelines CI/CD e ambientes containerizados. Apaixonado por
       código limpo, automação e boas práticas de engenharia de software.
