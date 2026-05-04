@@ -45,15 +45,32 @@ export const aboutBio = {
   paragraphs: [
     <>
       Estudante de Sistemas de Informação com foco em{" "}
-      <span style={{ color: "#00ff9c" }}>Backend e DevOps</span>, construindo
-      APIs RESTful, pipelines CI/CD e ambientes containerizados. Apaixonado por
-      código limpo, automação e boas práticas de engenharia de software.
+      <span style={{ color: "#00ff9c" }}>Backend com Java e Spring Boot</span>.
+      Meu interesse pela área surgiu ao desenvolver APIs e entender, na prática,
+      como sistemas bem projetados impactam performance, escalabilidade e
+      integração entre aplicações.
     </>,
     <>
-      Experiência prática com{" "}
-      <span style={{ color: "#00ff9c" }}>TypeScript, Python & Docker</span>,
-      incluindo homelab com orquestração Kubernetes, monitoramento com
-      Prometheus/Grafana e deploy em ambientes Linux.
+      Tenho experiência construindo{" "}
+      <span style={{ color: "#00ff9c" }}>
+        APIs REST, automações e serviços backend
+      </span>, aplicando boas práticas como Clean Code, versionamento com Git e
+      organização em camadas. Também utilizo Docker para padronização de
+      ambientes e pipelines básicos de CI/CD.
+    </>,
+    <>
+      Mantenho um homelab onde exploro{" "}
+      <span style={{ color: "#00ff9c" }}>
+        infraestrutura, containers e observabilidade
+      </span>, com estudos em Kubernetes, monitoramento com Prometheus/Grafana e
+      ambientes Linux, além de ter familiaridade com TypeScript e Python.
+    </>,
+    <>
+      Busco minha primeira oportunidade de estágio para{" "}
+      <span style={{ color: "#00ff9c" }}>
+        construir sistemas reais, aprender com engenharia em produção
+      </span>{" "}
+      e evoluir como desenvolvedor backend.
     </>,
   ],
 };
