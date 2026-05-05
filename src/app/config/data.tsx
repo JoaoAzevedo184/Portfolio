@@ -204,8 +204,8 @@ export const contacts = [
   {
     iconName: "Mail" as const,
     label: "Email",
-    value: "joaoazevedo184@gmail.com",
-    href: "mailto:joaoazevedo184@gmail.com",
+    value: "ccjconrad50@gmail.com",
+    href: "mailto:ccjconrad50@gmail.com",
   },
   {
     iconName: "Github" as const,
@@ -216,8 +216,8 @@ export const contacts = [
   {
     iconName: "Linkedin" as const,
     label: "LinkedIn",
-    value: "linkedin.com/in/joaoazevedo184",
-    href: "https://www.linkedin.com/in/joaoazevedo184",
+    value: "linkedin.com/in/joao-victor-azevedo-181-sena",
+    href: "https://www.linkedin.com/in/joao-victor-azevedo-181-sena",
   },
 ];
 
@@ -246,7 +246,7 @@ export const chatBotFaq = [
   {
     keywords: ["contato", "email", "chamar", "falar", "conversar", "contratar"],
     answer:
-      "Você pode entrar em contato pelo email joaoazevedo184@gmail.com ou pelo GitHub (github.com/JoaoAzevedo184). Ele está aberto a oportunidades! 🚀",
+      "Você pode entrar em contato pelo email ccjconrad50@gmail.com ou pelo GitHub (github.com/JoaoAzevedo184). Ele está aberto a oportunidades! 🚀",
   },
   {
     keywords: ["projeto", "projetos", "portfólio", "trabalhos", "fez"],
