@@ -86,6 +86,8 @@ export type Project = {
 };
 
 const GH = "https://github.com/JoaoAzevedo184";
+const YT = "https://www.youtube.com/watch?v=";
+const LK = "https://www.linkedin.com/in/joao-victor-azevedo-181-sena";
 
 export const projects: Project[] = [
   {
@@ -218,7 +220,7 @@ export type ContactChannel = { label: string; value: string; href: string; icon:
 // Troque os valores marcados com "seu-" pelos seus dados reais.
 export const contacts: ContactChannel[] = [
   { label: "E-mail", value: "ccjconra50@gmail.com", href: "mailto:ccjconra50@gmail.com", icon: `${SIMPLE}/gmail` },
-  { label: "LinkedIn", value: "/in/meu-perfil", href: "www.linkedin.com/in/joao-victor-azevedo-181-sena", icon: `${DEVICON}/linkedin/linkedin-plain.svg`, monoIcon: `${DEVICON}/linkedin/linkedin-plain.svg` },
+  { label: "LinkedIn", value: "/in/meu-perfil", href: LK, icon: `${DEVICON}/linkedin/linkedin-plain.svg`, monoIcon: `${DEVICON}/linkedin/linkedin-plain.svg` },
   { label: "GitHub", value: "JoaoAzevedo184", href: GH, icon: `${DEVICON}/github/github-original.svg` },
   { label: "WhatsApp", value: "(81) 98859-2011", href: "https://wa.me/5581988592011", icon: `${SIMPLE}/whatsapp` },
 ];
