@@ -6,17 +6,21 @@ export default function About() {
       <div className="about-grid">
         <div className="about-text panel">
           <p>
-            Sou João Victor Azevedo de Sena, estudante do 6º período de Sistemas de Informação na UNINASSAU. Gosto
-            da parte do software que ninguém vê: a API que responde rápido, o banco que não perde dado e o deploy que
-            não quebra na sexta à tarde.
+            Sou João Victor Azevedo de Sena, estudante do 6º período de Sistemas de Informação na UNINASSAU.
+            Gosto de construir soluções que resolvem problemas de verdade e da parte do software que quase ninguém vê:
+            a API que responde rápido, o banco de dados que não perde informação e o deploy que não quebra na sexta à tarde.
           </p>
+
           <p>
-            No dia a dia trabalho com Java e Spring Boot, além de Python com FastAPI e Node.js com TypeScript.
-            Empacoto com Docker, automatizo com GitHub Actions e publico em Kubernetes com Helm.
+            No dia a dia desenvolvo aplicações backend com Java e Spring Boot, Python com FastAPI e Node.js com TypeScript.
+            Também cuido do caminho até produção com Docker, GitHub Actions, Kubernetes e Helm, buscando entregas confiáveis
+            e fáceis de manter.
           </p>
+
           <p>
-            Hoje faço a Residência em Tecnologia do Instituto ECOA | PUC-Rio e, nas horas livres, mantenho um homelab
-            e estudo como modelos de IA funcionam por dentro.
+            Atualmente faço a Residência em Tecnologia do Instituto ECOA | PUC-Rio, onde desenvolvo projetos em equipe e
+            aprofundo meus estudos em engenharia de software. Fora do trabalho e da faculdade, mantenho um homelab e exploro
+            infraestrutura, automação e inteligência artificial na prática.
           </p>
         </div>
 

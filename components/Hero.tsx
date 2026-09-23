@@ -50,8 +50,7 @@ export default function Hero() {
         <div className="hero-rule anim" style={{ "--d": "0.42s" } as React.CSSProperties} aria-hidden="true" />
 
         <p className="hero-text anim" style={{ "--d": "0.5s" } as React.CSSProperties}>
-          Sou João Victor. Construo APIs em Java, Python e Node.js e coloco tudo para rodar com Docker,
-          Kubernetes e CI/CD.
+          Desenvolvo sistemas, automações e soluções com IA para simplificar processos e ajudar negócios a fazerem mais com menos esforço.
         </p>
 
         <div className="hero-actions anim" style={{ "--d": "0.6s" } as React.CSSProperties}>
